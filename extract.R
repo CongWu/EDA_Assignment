@@ -1,0 +1,7 @@
+table = read.table(f,sep = ';',head = T)
+d = strptime(table$Date,"%d/%m/%Y")
+d = as.Date(d)
+k1 = as.Date("2007-02-01")
+k2 = as.Date("2007-02-02")
+s = subset(table,d==k1|d==k2)
+s$Global_active_power = as.numeric(as.character(s$Global_active_power))
